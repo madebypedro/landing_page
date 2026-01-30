@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games e PC Gamer | Netshoes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        ns: {
+                            purple: '#5A2D82',     // Roxo Oficial Netshoes
+                            darkPurple: '#32194d', // Roxo Escuro
+                            yellow: '#FFCE00',     // Amarelo Institucional
+                            lime: '#D2E603',       // Verde/Lima Ação
+                            price: '#5A2D82',      // Cor do preço
+                            text: '#333333'
+                        }
+                    },
+                    boxShadow: {
+                        'card': '0 1px 4px 0 rgba(0,0,0,0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f5f5f5; }
+       
+        .ns-header-gradient {
+            background: linear-gradient(90deg, #5A2D82 0%, #3a165e 100%);
+        }
+
+        .discount-flag {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+        }
+
+        /* Gaming Background */
+        .theme-gaming-bg {
+            background-color: #120a1f;
+            background-image: radial-gradient(circle at 50% 0%, #2d1b4e 0%, #120a1f 70%);
+        }
+
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Brand Carousel Animation */
+        .brand-scroll:hover {
+            border-color: #D2E603;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-ns-text">
+
+    <!-- 1. HEADER GLOBAL -->
+    <header class="w-full sticky top-0 z-50">
+        <div class="bg-ns-header-gradient h-16 flex items-center shadow-md">
+            <div class="container mx-auto px-4 flex justify-between items-center max-w-[1280px]">
+                <div class="flex items-center gap-4 lg:gap-8 flex-1">
+                    <button class="text-white text-2xl lg:hidden">☰</button>
+                    <div class="text-white font-extrabold text-2xl tracking-tighter italic">NETSHOES</div>
+                    <div class="hidden lg:flex flex-1 max-w-2xl relative">
+                        <input type="text" placeholder="Busque por mouses, teclados, jogos..." class="w-full h-10 rounded-full pl-4 pr-10 text-sm focus:outline-none text-gray-700">
+                        <button class="absolute right-3 top-2 text-ns-purple font-bold">🔍</button>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 lg:gap-6 text-white text-xs lg:text-sm font-semibold">
+                    <div class="hidden lg:flex flex-col items-center cursor-pointer hover:opacity-80">
+                        <span class="text-xl">👤</span><span>Entrar</span>
+                    </div>
+                    <div class="flex flex-col items-center cursor-pointer hover:opacity-80 relative">
+                        <span class="text-xl">🛒</span><span>Carrinho</span>
+                        <span class="absolute -top-1 -right-1 bg-ns-yellow text-ns-purple text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sub Menu -->
+        <div class="bg-ns-purple border-t border-white/10 hidden lg:block">
+            <div class="container mx-auto px-4 max-w-[1280px]">
+                <ul class="flex gap-8 text-white text-sm font-bold h-10 items-center uppercase tracking-tight">
+                    <li class="hover:text-ns-yellow cursor-pointer">Todas as Categorias</li>
+                    <li class="hover:text-ns-yellow cursor-pointer text-ns-yellow">Games</li>
+                    <li class="hover:text-ns-yellow cursor-pointer">Hardware</li>
+                    <li class="hover:text-ns-yellow cursor-pointer">Periféricos</li>
+                    <li class="hover:text-ns-yellow cursor-pointer">Cadeiras</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="theme-gaming-bg min-h-screen pb-12">
+       
+        <!-- BREADCRUMB -->
+        <div class="container mx-auto px-4 py-2 max-w-[1280px]">
+            <p class="text-[10px] text-gray-400 uppercase font-bold tracking-wide">Home / <span class="text-ns-yellow">Games</span></p>
+        </div>
+
+        <!-- MAIN BANNER (Full Width) -->
+        <div class="w-full relative group cursor-pointer mb-4">
+            <div class="w-full h-[180px] md:h-[320px] lg:h-[380px] bg-gradient-to-r from-black via-purple-900 to-black flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1593305841991-05c29736f87e?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30"></div>
+                <div class="relative z-10 text-center space-y-2 px-4">
+                    <span class="inline-block bg-ns-lime text-ns-purple font-bold px-2 py-1 text-xs uppercase rounded">Oferta Exclusiva</span>
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white italic uppercase drop-shadow-lg">Arena <span class="text-ns-yellow">Gamer</span></h1>
+                    <p class="text-gray-200 text-sm md:text-lg font-light">Os melhores setups começam aqui.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RÉGUA DE VANTAGENS -->
+        <div class="bg-ns-darkPurple border-b border-white/5 py-3 mb-6">
+            <div class="container mx-auto px-4 max-w-[1280px] flex justify-between overflow-x-auto gap-8 hide-scroll text-gray-300">
+                           </div>
+        </div>
+
+        <!-- MAIN CONTENT AREA (Full Width) -->
+        <div class="container mx-auto px-4 max-w-[1280px]">
+            <main class="w-full">
+               
+                <!-- 1. VITRINE: NAVEGUE POR CATEGORIAS (Botões) -->
+                <div class="mb-10">
+                    <h2 class="text-white font-bold text-xl uppercase italic mb-4 pl-3 border-l-4 border-ns-yellow">Navegue por Categorias</h2>
+                    <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+                        <!-- Categoria Item -->
+                        <a href="#" class="flex flex-col items-center bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-ns-purple hover:border-ns-lime transition-all group">
+                            <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🖱️</span>
+                            <span class="text-xs font-bold text-gray-300 uppercase group-hover:text-white">Mouses</span>
+                        </a>
+                        <!-- Categoria Item -->
+                        <a href="#" class="flex flex-col items-center bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-ns-purple hover:border-ns-lime transition-all group">
+                            <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⌨️</span>
+                            <span class="text-xs font-bold text-gray-300 uppercase group-hover:text-white">Teclados</span>
+                        </a>
+                        <!-- Categoria Item -->
+                        <a href="#" class="flex flex-col items-center bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-ns-purple hover:border-ns-lime transition-all group">
+                            <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎧</span>
+                            <span class="text-xs font-bold text-gray-300 uppercase group-hover:text-white">Headsets</span>
+                        </a>
+                        <!-- Categoria Item -->
+                        <a href="#" class="flex flex-col items-center bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-ns-purple hover:border-ns-lime transition-all group">
+                            <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">💺</span>
+                            <span class="text-xs font-bold text-gray-300 uppercase group-hover:text-white">Cadeiras</span>
+                        </a>
+                        <!-- Categoria Item -->
+                        <a href="#" class="flex flex-col items-center bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-ns-purple hover:border-ns-lime transition-all group">
+                            <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🖥️</span>
+                            <span class="text-xs font-bold text-gray-300 uppercase group-hover:text-white">Monitores</span>
+                        </a>
+                        <!-- Categoria Item -->
+                        <a href="#" class="flex flex-col items-center bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-ns-purple hover:border-ns-lime transition-all group">
+                            <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎮</span>
+                            <span class="text-xs font-bold text-gray-300 uppercase group-hover:text-white">Consoles</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. VITRINE: HARDWARE (Placa Mãe, Vídeo, RAM) -->
+                <div class="mb-10">
+                    <div class="flex justify-between items-end mb-4 border-b border-white/10 pb-2">
+                        <h2 class="text-white font-bold text-xl uppercase italic flex items-center gap-2">
+                            Hardware & Upgrade
+                            <span class="bg-ns-lime text-ns-purple text-[10px] px-2 py-0.5 rounded font-bold not-italic">Alta Performance</span>
+                        </h2>
+                        <a href="#" class="text-ns-yellow text-sm font-bold hover:underline">Ver tudo ❯</a>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Card 1 -->
+                        <div class="bg-white rounded-lg shadow-card overflow-hidden group cursor-pointer hover:shadow-xl transition-shadow relative">
+                            <div class="h-40 p-4 flex items-center justify-center group-hover:opacity-90">
+                                <img src="https://placehold.co/200x200/png?text=RTX+4060" class="max-h-full">
+                            </div>
+                            <div class="p-3 border-t border-gray-100">
+                                <h3 class="text-xs text-gray-600 font-normal line-clamp-2 h-8 mb-1 group-hover:text-ns-purple transition-colors">Placa de Vídeo RTX 4060 Ti 8GB GDDR6</h3>
+                                <div class="text-[10px] text-gray-400 line-through">R$ 3.200,00</div>
+                                <div class="text-ns-purple font-bold text-lg leading-tight">R$ 2.899,90</div>
+                                <div class="text-[10px] text-gray-500">10x de R$ 289,99</div>
+                                <button class="w-full mt-2 bg-ns-lime text-ns-darkPurple font-bold text-xs py-1.5 rounded uppercase hover:bg-ns-yellow transition-colors">Comprar</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="bg-white rounded-lg shadow-card overflow-hidden group cursor-pointer hover:shadow-xl transition-shadow relative">
+                            <div class="absolute top-0 left-3 bg-ns-yellow text-ns-purple text-[10px] font-bold px-2 py-2 discount-flag z-10">-15%</div>
+                            <div class="h-40 p-4 flex items-center justify-center group-hover:opacity-90">
+                                <img src="https://placehold.co/200x200/png?text=Motherboard" class="max-h-full">
+                            </div>
+                            <div class="p-3 border-t border-gray-100">
+                                <h3 class="text-xs text-gray-600 font-normal line-clamp-2 h-8 mb-1 group-hover:text-ns-purple transition-colors">Placa Mãe B550M Aorus Elite DDR4</h3>
+                                <div class="text-[10px] text-gray-400 line-through">R$ 999,00</div>
+                                <div class="text-ns-purple font-bold text-lg leading-tight">R$ 849,90</div>
+                                <div class="text-[10px] text-gray-500">8x de R$ 106,23</div>
+                                <button class="w-full mt-2 bg-ns-lime text-ns-darkPurple font-bold text-xs py-1.5 rounded uppercase hover:bg-ns-yellow transition-colors">Comprar</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="bg-white rounded-lg shadow-card overflow-hidden group cursor-pointer hover:shadow-xl transition-shadow relative">
+                            <div class="h-40 p-4 flex items-center justify-center group-hover:opacity-90">
+                                <img src="https://placehold.co/200x200/png?text=RAM+16GB" class="max-h-full">
+                            </div>
+                            <div class="p-3 border-t border-gray-100">
+                                <h3 class="text-xs text-gray-600 font-normal line-clamp-2 h-8 mb-1 group-hover:text-ns-purple transition-colors">Memória RAM Kingston Fury Beast 16GB 3200MHz</h3>
+                                <div class="text-[10px] text-gray-400 line-through">R$ 350,00</div>
+                                <div class="text-ns-purple font-bold text-lg leading-tight">R$ 299,90</div>
+                                <div class="text-[10px] text-gray-500">3x de R$ 99,96</div>
+                                <button class="w-full mt-2 bg-ns-lime text-ns-darkPurple font-bold text-xs py-1.5 rounded uppercase hover:bg-ns-yellow transition-colors">Comprar</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="bg-white rounded-lg shadow-card overflow-hidden group cursor-pointer hover:shadow-xl transition-shadow relative">
+                            <div class="h-40 p-4 flex items-center justify-center group-hover:opacity-90">
+                                <img src="https://placehold.co/200x200/png?text=SSD+1TB" class="max-h-full">
+                            </div>
+                            <div class="p-3 border-t border-gray-100">
+                                <h3 class="text-xs text-gray-600 font-normal line-clamp-2 h-8 mb-1 group-hover:text-ns-purple transition-colors">SSD NVMe M.2 1TB Leitura 3500MB/s</h3>
+                                <div class="text-[10px] text-gray-400 line-through">R$ 450,00</div>
+                                <div class="text-ns-purple font-bold text-lg leading-tight">R$ 389,90</div>
+                                <div class="text-[10px] text-gray-500">4x de R$ 97,47</div>
+                                <button class="w-full mt-2 bg-ns-lime text-ns-darkPurple font-bold text-xs py-1.5 rounded uppercase hover:bg-ns-yellow transition-colors">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. CARROSSEL DE MARCAS (Logos) -->
+                <div class="mb-10">
+                    <h2 class="text-white font-bold text-lg mb-4 uppercase tracking-widest text-center text-gray-400 text-xs">Marcas Parceiras</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-lg p-6 flex items-center justify-between gap-8 overflow-x-auto hide-scroll">
+                        <img src="https://placehold.co/100x40/transparent/ffffff?text=RAZER" class="opacity-50 hover:opacity-100 transition-opacity cursor-pointer h-8 object-contain">
+                        <img src="https://placehold.co/100x40/transparent/ffffff?text=LOGITECH" class="opacity-50 hover:opacity-100 transition-opacity cursor-pointer h-8 object-contain">
+                        <img src="https://placehold.co/100x40/transparent/ffffff?text=HYPERX" class="opacity-50 hover:opacity-100 transition-opacity cursor-pointer h-8 object-contain">
+                        <img src="https://placehold.co/100x40/transparent/ffffff?text=REDRAGON" class="opacity-50 hover:opacity-100 transition-opacity cursor-pointer h-8 object-contain">
+                        <img src="https://placehold.co/100x40/transparent/ffffff?text=CORSAIR" class="opacity-50 hover:opacity-100 transition-opacity cursor-pointer h-8 object-contain">
+                        <img src="https://placehold.co/100x40/transparent/ffffff?text=NVIDIA" class="opacity-50 hover:opacity-100 transition-opacity cursor-pointer h-8 object-contain">
+                    </div>
+                </div>
+
+                <!-- 4. TRIO DE BANNERS (410x410) -->
+                <div class="mb-10">
+                    <h2 class="text-white font-bold text-xl uppercase italic mb-4 pl-3 border-l-4 border-ns-yellow">Destaques da Semana</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Banner 1 -->
+                        <div class="aspect-square rounded-lg relative overflow-hidden group cursor-pointer border border-white/10">
+                            <img src="https://placehold.co/410x410/10b981/ffffff?text=RAZER+WEEK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                                <span class="text-ns-lime font-bold text-xs uppercase mb-1">Até 40% OFF</span>
+                                <h3 class="text-white font-bold text-2xl uppercase italic">Razer Week</h3>
+                                <button class="mt-2 text-white text-xs font-bold underline decoration-ns-lime underline-offset-4 w-fit">Ver Produtos</button>
+                            </div>
+                        </div>
+                        <!-- Banner 2 -->
+                        <div class="aspect-square rounded-lg relative overflow-hidden group cursor-pointer border border-white/10">
+                            <img src="https://placehold.co/410x410/3b82f6/ffffff?text=LOGITECH+G" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                                <span class="text-blue-400 font-bold text-xs uppercase mb-1">Lançamento</span>
+                                <h3 class="text-white font-bold text-2xl uppercase italic">Logitech PRO X</h3>
+                                <button class="mt-2 text-white text-xs font-bold underline decoration-blue-500 underline-offset-4 w-fit">Conferir</button>
+                            </div>
+                        </div>
+                        <!-- Banner 3 -->
+                        <div class="aspect-square rounded-lg relative overflow-hidden group cursor-pointer border border-white/10">
+                            <img src="https://placehold.co/410x410/ef4444/ffffff?text=HYPERX" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                                <span class="text-red-500 font-bold text-xs uppercase mb-1">Combo Gamer</span>
+                                <h3 class="text-white font-bold text-2xl uppercase italic">Kits HyperX</h3>
+                                <button class="mt-2 text-white text-xs font-bold underline decoration-red-500 underline-offset-4 w-fit">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. CARROSSEL DE BOTÕES: BUSCA RÁPIDA (Novo) -->
+                <div class="mb-10">
+                    <h2 class="text-white font-bold text-lg mb-4 uppercase tracking-widest text-center text-gray-400 text-xs">Busca Rápida</h2>
+                    <div class="flex gap-3 overflow-x-auto hide-scroll pb-2 justify-start md:justify-center">
+                        <button class="px-6 py-2 rounded-full border border-white/20 bg-white/5 text-gray-300 text-sm font-bold hover:bg-ns-yellow hover:text-ns-purple hover:border-ns-yellow transition-all whitespace-nowrap">Mouses</button>
+                        <button class="px-6 py-2 rounded-full border border-white/20 bg-white/5 text-gray-300 text-sm font-bold hover:bg-ns-yellow hover:text-ns-purple hover:border-ns-yellow transition-all whitespace-nowrap">Teclados</button>
+                        <button class="px-6 py-2 rounded-full border border-white/20 bg-white/5 text-gray-300 text-sm font-bold hover:bg-ns-yellow hover:text-ns-purple hover:border-ns-yellow transition-all whitespace-nowrap">Headsets</button>
+                        <button class="px-6 py-2 rounded-full border border-white/20 bg-white/5 text-gray-300 text-sm font-bold hover:bg-ns-yellow hover:text-ns-purple hover:border-ns-yellow transition-all whitespace-nowrap">Monitores</button>
+                        <button class="px-6 py-2 rounded-full border border-white/20 bg-white/5 text-gray-300 text-sm font-bold hover:bg-ns-yellow hover:text-ns-purple hover:border-ns-yellow transition-all whitespace-nowrap">Cadeiras</button>
+                        <button class="px-6 py-2 rounded-full border border-white/20 bg-white/5 text-gray-300 text-sm font-bold hover:bg-ns-yellow hover:text-ns-purple hover:border-ns-yellow transition-all whitespace-nowrap">Consoles</button>
+                        <button class="px-6 py-2 rounded-full border border-white/20 bg-white/5 text-gray-300 text-sm font-bold hover:bg-ns-yellow hover:text-ns-purple hover:border-ns-yellow transition-all whitespace-nowrap">Hardware</button>
+                    </div>
+                </div>
+
+                <!-- 6. VITRINE POR TIPO (Última Seleção) -->
+                <div class="mb-4">
+                    <h2 class="text-white font-bold text-xl uppercase italic mb-4 pl-3 border-l-4 border-ns-yellow">Acessórios Essenciais</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Card 1 -->
+                        <div class="bg-white rounded-lg shadow-card p-3 cursor-pointer hover:shadow-lg transition-shadow">
+                            <div class="h-32 flex items-center justify-center mb-2"><img src="https://placehold.co/150x150/png?text=Microfone" class="max-h-full"></div>
+                            <h3 class="text-xs text-gray-700 font-bold mb-1">Microfones Stream</h3>
+                            <span class="text-ns-purple text-sm font-bold">A partir de R$ 199</span>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bg-white rounded-lg shadow-card p-3 cursor-pointer hover:shadow-lg transition-shadow">
+                            <div class="h-32 flex items-center justify-center mb-2"><img src="https://placehold.co/150x150/png?text=Webcam" class="max-h-full"></div>
+                            <h3 class="text-xs text-gray-700 font-bold mb-1">Webcams Full HD</h3>
+                            <span class="text-ns-purple text-sm font-bold">A partir de R$ 159</span>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="bg-white rounded-lg shadow-card p-3 cursor-pointer hover:shadow-lg transition-shadow">
+                            <div class="h-32 flex items-center justify-center mb-2"><img src="https://placehold.co/150x150/png?text=Mousepad" class="max-h-full"></div>
+                            <h3 class="text-xs text-gray-700 font-bold mb-1">Mousepads XL</h3>
+                            <span class="text-ns-purple text-sm font-bold">A partir de R$ 59</span>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="bg-white rounded-lg shadow-card p-3 cursor-pointer hover:shadow-lg transition-shadow">
+                            <div class="h-32 flex items-center justify-center mb-2"><img src="https://placehold.co/150x150/png?text=Cabos" class="max-h-full"></div>
+                            <h3 class="text-xs text-gray-700 font-bold mb-1">Cabos e Adaptadores</h3>
+                            <span class="text-ns-purple text-sm font-bold">A partir de R$ 29</span>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+    </div>
+
+    <!-- SEO & FOOTER -->
+    <div class="bg-white py-6 border-t border-gray-200">
+        <div class="container mx-auto px-4 max-w-[1280px]">
+            <h3 class="text-ns-text font-bold text-sm mb-2">PC Gamer e Acessórios</h3>
+            <p class="text-xs text-gray-500 leading-relaxed text-justify">
+                A Netshoes traz o melhor do universo gamer para você. Encontre aqui mouses, teclados, headsets e cadeiras das marcas mais renomadas como Razer, Logitech, HyperX e muito mais. Monte seu setup com quem entende de esporte e performance.
+            </p>
+        </div>
+    </div>
+
+    <footer class="bg-ns-darkPurple text-white py-10 border-t-4 border-ns-yellow">
+        <div class="container mx-auto px-4 max-w-[1280px] grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <h4 class="font-bold text-sm mb-4 uppercase text-ns-yellow">Institucional</h4>
+                <ul class="space-y-2 text-xs text-gray-300">
+                    <li><a href="#" class="hover:underline">Sobre a Netshoes</a></li>
+                    <li><a href="#" class="hover:underline">Trabalhe Conosco</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm mb-4 uppercase text-ns-yellow">Ajuda</h4>
+                <ul class="space-y-2 text-xs text-gray-300">
+                    <li><a href="#" class="hover:underline">Trocas e Devoluções</a></li>
+                    <li><a href="#" class="hover:underline">Meus Pedidos</a></li>
+                </ul>
+            </div>
+            <div class="col-span-2">
+                <h4 class="font-bold text-sm mb-4 uppercase text-ns-yellow">Pagamento</h4>
+                <div class="flex gap-2 opacity-70">
+                    <div class="w-8 h-5 bg-white rounded"></div>
+                    <div class="w-8 h-5 bg-white rounded"></div>
+                    <div class="w-8 h-5 bg-white rounded"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 max-w-[1280px] border-t border-white/10 pt-4 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-400">
+            <p>© 2024 Netshoes. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
